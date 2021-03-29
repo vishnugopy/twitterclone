@@ -1,3 +1,8 @@
+body{
+    width: 90%;
+    margin: 0 auto;
+}
+
 .section-accueil {
   height: 100vh;
   width: 100vw;
@@ -51,14 +56,15 @@
       padding-left: 1.5%;
       width: 49vw;
       height: 10vh;
-      position: fixed;
+   
       border-bottom: 1px solid gray;
       background-color: #16212b;
   }
   &-form {
-      margin-top: 10vh;
+      margin-top: 5vh;
       width: 100%;
       border-bottom: 10px solid rgba(128, 128, 128, 0.5);
+      outline: none;
   }
   &-text {
       display: flex;
@@ -71,12 +77,13 @@
       }
       textarea {
           width: 100%;
-          margin-left: 3%;
+          margin-left: 0%;
           padding: 1%;
           background-color: transparent;
           color: white;
           border: none;
           font-size: 20px;
+          outline: none;
       }
   }
   &-button {
