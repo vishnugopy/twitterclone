@@ -29,3 +29,4 @@ VALUES ( "vishnu" , "gopy" , 10/07/1999 , "vg" , "vishnu@gmail.com" , "000000" ,
 
 
 INSERT INTO Tweets ( content , createsAt , userid) VALUES ( "good morning world" , 29/03/2021 , 1);
+INSERT INTO Tweets ( content , createsAt , userid) VALUES ( "How  y'all doing ??" , 29/03/2021 , 1);
