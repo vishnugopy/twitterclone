@@ -25,7 +25,7 @@ CREATE TABLE Tweets (
 )
 
 INSERT INTO Users ( name , lastname , birthday , username , email , password , phone , city)  
-VALUES ( "vishnu" , "gopy" , 10/07/1999 , "vg" , "vishnu@gmail.com" , "000000" , 0757654321 , "ermont ) ;
+VALUES ( "vishnu" , "gopy" , 10/07/1999 , "vg" , "vishnu@gmail.com" , "000000" , 0757654321 , "ermont" ) ;
 
 
 INSERT INTO Tweets ( content , createsAt , userid) VALUES ( "good morning world" , 29/03/2021 , 1);
