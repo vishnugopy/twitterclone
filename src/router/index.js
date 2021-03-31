@@ -6,8 +6,11 @@ const usercontroller = require("../controller/userController")
 const router = express.Router();
 
 router.get("/" , tweetcontroler.findAll );
-// router.get("/signup.ejs" , usercontroller.signup );
-router.post("/signup" , usercontroller.signup );
+router.get("/logout" , usercontroller.logout );
+router.post("/signup" , usercontroller.newAccount );
+router.get("/signup" , usercontroller.signup );
+router.get("/login" , usercontroller.login );
+router.post("/login" , usercontroller.authenticate );
 
 
 

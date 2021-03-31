@@ -11,7 +11,7 @@ exports.signup = (request, response) => {
 }
 
 exports.newAccount = (request, response) => {
-  const { name, username, password } = request.body;
+  const { name, username, password , lastname , email , city , birthday , phone } = request.body;
 
   User.getByUsername(username, (error, result) => {
     if (error) {
@@ -32,6 +32,11 @@ exports.newAccount = (request, response) => {
       const newUser = {
         name,
         username,
+        lastname,
+        email,
+        city,
+        birthday,
+        phone,
         password: hash
       }
 
@@ -97,5 +102,5 @@ exports.authenticate = (request, response) => {
 
 exports.logout = (request, response) => {
   response.clearCookie("authcookie");
-  response.redirect("/");
+  response.redirect("/login");
 }
