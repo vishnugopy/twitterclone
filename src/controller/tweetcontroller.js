@@ -12,3 +12,16 @@ exports.findAll = (request, response) => {
     response.render("index.ejs", { tweets });
   });
 }
+
+
+exports.getprofile = (request, response) => {
+  Tweets.getAll((error, tweets) => {
+    if (error) {
+      response.send(error.message);
+    }
+
+    console.log("profile ", tweets);
+
+    response.render("profile.ejs", { tweets });
+  });
+}

@@ -11,6 +11,8 @@ router.post("/signup" , usercontroller.newAccount );
 router.get("/signup" , usercontroller.signup );
 router.get("/login" , usercontroller.login );
 router.post("/login" , usercontroller.authenticate );
+router.get("/username" , usercontroller.profile );
+router.get("/username" , tweetcontroler.getprofile );
 
 
 
