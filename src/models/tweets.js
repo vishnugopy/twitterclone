@@ -15,7 +15,7 @@ exports.getAll = (callback) => {
 }
 
 
-exports.getprofile = (callback) => {
+exports.profiledetails = (callback) => {
   db.query("SELECT * FROM tweets INNER JOIN users ON tweets.userid = users.id;", (error, result) => {
     if (error) {
       console.log("error: ", error);

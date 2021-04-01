@@ -15,7 +15,7 @@ exports.findAll = (request, response) => {
 
 
 exports.getprofile = (request, response) => {
-  Tweets.getAll((error, tweets) => {
+  Tweets.profiledetails((error, tweets) => {
     if (error) {
       response.send(error.message);
     }

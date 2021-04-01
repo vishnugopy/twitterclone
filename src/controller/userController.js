@@ -10,10 +10,6 @@ exports.signup = (request, response) => {
   response.render("signup.ejs");
 }
 
-exports.profile = (request, response) => {
-  response.render("profile.ejs");
-}
-
 
 exports.newAccount = (request, response) => {
   const { name, username, password , lastname , email , city , birthday , phone } = request.body;

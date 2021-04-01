@@ -41,88 +41,42 @@
 
     <div class="tweet-container">
       <div class="tweet-container-title">
-        <h3>Laurent Jade</h3>
+        <h3><%= tweets[0].username %></h3>
       </div>
       <div class="tweet-container-profile">
         <div class="tweet-container-profile-background">
           <img src="" alt="">
         </div>
         <div class="tweet-container-profile-picture">
-          <img src="" alt="">
+          <img src="./images/user.png" alt="">
         </div>
         <div class="tweet-container-profile-infos">
-          <h3>Laurent Jade</h3>
-          <h4>@laurent_jade</h4>
-          <p>Paris</p>
+          <h3><%= tweets[0].name %></h3>
+          <h4>@<%= tweets[0].username %></h4>
+          <p><%= tweets[0].city %></p>
         </div>
       </div>
 
       <div class="comments">
 
-        <div class="comments-comment">
-          <a href="/username"><img src="" alt=""></a>
-          <div class="comments-comment-content">
-            <div class="comments-comment-content-nameDate">
-              <a href="/username">
-                <h3 class="comments-comment-content-username">laurent_jade</h3>
-              </a>
-              <span class="comments-comment-content-date">DATE</span>
-            </div>
-            <p class="comments-comment-content-text">Mon super tweet de la mort qui tue pour remplir l'espace</p>
-          </div>
-        </div>
+        <% tweets.forEach((tweet)=>{ %>
 
-        <div class="comments-comment">
-          <a href="/username"><img src="" alt=""></a>
-          <div class="comments-comment-content">
-            <div class="comments-comment-content-nameDate">
-              <a href="/username">
-                <h3 class="comments-comment-content-username">laurent_jade</h3>
-              </a>
-              <span class="comments-comment-content-date">DATE</span>
+          <div class="comments-comment">
+            <a href="/username"><img src="./images/user.png" alt=""></a>
+            <div class="comments-comment-content">
+              <div class="comments-comment-content-nameDate">
+                <a href="/username">
+                  <h3 class="comments-comment-content-username"><%= tweet.username %></h3>
+                </a>
+                <span class="comments-comment-content-date"><%= tweet.createsAt %></span>
+              </div>
+              <p class="comments-comment-content-text"><%= tweet.content %></p>
             </div>
-            <p class="comments-comment-content-text">Mon super tweet de la mort qui tue pour remplir l'espace</p>
           </div>
-        </div>
+  
+  
+          <% })%>
 
-        <div class="comments-comment">
-          <a href="/username"><img src="" alt=""></a>
-          <div class="comments-comment-content">
-            <div class="comments-comment-content-nameDate">
-              <a href="/username">
-                <h3 class="comments-comment-content-username">laurent_jade</h3>
-              </a>
-              <span class="comments-comment-content-date">DATE</span>
-            </div>
-            <p class="comments-comment-content-text">Mon super tweet de la mort qui tue pour remplir l'espace</p>
-          </div>
-        </div>
-
-        <div class="comments-comment">
-          <a href="/username"><img src="" alt=""></a>
-          <div class="comments-comment-content">
-            <div class="comments-comment-content-nameDate">
-              <a href="/username">
-                <h3 class="comments-comment-content-username">laurent_jade</h3>
-              </a>
-              <span class="comments-comment-content-date">DATE</span>
-            </div>
-            <p class="comments-comment-content-text">Mon super tweet de la mort qui tue pour remplir l'espace</p>
-          </div>
-        </div>
-
-        <div class="comments-comment">
-          <a href="/username"><img src="" alt=""></a>
-          <div class="comments-comment-content">
-            <div class="comments-comment-content-nameDate">
-              <a href="/username">
-                <h3 class="comments-comment-content-username">laurent_jade</h3>
-              </a>
-              <span class="comments-comment-content-date">DATE</span>
-            </div>
-            <p class="comments-comment-content-text">Mon super tweet de la mort qui tue pour remplir l'espace</p>
-          </div>
-        </div>
 
       </div>
 
