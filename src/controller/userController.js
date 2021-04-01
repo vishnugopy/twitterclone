@@ -12,7 +12,16 @@ exports.signup = (request, response) => {
 
 
 exports.newAccount = (request, response) => {
-  const { name, username, password , lastname , email , city , birthday , phone } = request.body;
+  const {
+    name,
+    username,
+    password,
+    lastname,
+    email,
+    city,
+    birthday,
+    phone
+  } = request.body;
 
   User.getByUsername(username, (error, result) => {
     if (error) {
@@ -45,7 +54,7 @@ exports.newAccount = (request, response) => {
         if (error) {
           response.send(error.message);
         }
-        
+
         response.redirect("/login");
       })
     })
@@ -57,7 +66,10 @@ exports.login = (request, response) => {
 }
 
 exports.authenticate = (request, response) => {
-  const { username, password } = request.body;
+  const {
+    username,
+    password
+  } = request.body;
 
   User.getByUsername(username, (error, result) => {
     if (error) {
@@ -82,9 +94,11 @@ exports.authenticate = (request, response) => {
       const user = {
         name: result[0].name,
         username: result[0].username,
-        id : result[0].id,
+        id: result[0].id,
         exp: MAXAGE
       };
+
+      console.log(user);
 
       jwt.sign(user, SECRET, (error, token) => {
         if (error) {
@@ -92,9 +106,12 @@ exports.authenticate = (request, response) => {
         }
 
         request.user = user;
-        
-        response.cookie('authcookie', token, { maxAge: MAXAGE });
+
+        response.cookie('authcookie', token,  {
+          maxAge: MAXAGE
+        });
         response.redirect('/');
+
       });
     });
   })
@@ -104,4 +121,3 @@ exports.logout = (request, response) => {
   response.clearCookie("authcookie");
   response.redirect("/login");
 }
-

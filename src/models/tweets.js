@@ -27,9 +27,9 @@ exports.profiledetails = (iduser,callback) => {
   })
 }
 
-exports.addTweet = (content, callback) => {
-  db.query(`INSERT INTO tweets (content , createsAt ,  userid ) 
-  VALUES ("${content.content}","2020/10/02", "13" );`, (error, result) => {
+exports.addTweet = ( content, callback) => {
+  db.query(`INSERT INTO tweets (content , createsAt , userid ) 
+  VALUES ("${content.content}","2020/10/02", "${user.id}" );`, (error, result) => {
     if (error) {
       console.log("error: ", error);
       callback(error, null);

@@ -1,15 +1,17 @@
 const { response } = require("express");
 const Tweets = require("../models/tweets");
 
+
 exports.findAll = (request, response) => {
+
   Tweets.getAll((error, tweets) => {
     if (error) {
       response.send(error.message);
     }
 
-    console.log("tweetsssssssssssssssss ", tweets);
+    console.log("tweetsssssssssssssssss ", tweets );
 
-    response.render("index.ejs", { tweets });
+    response.render("index.ejs", { tweets  });
   });
 }
 
@@ -28,7 +30,7 @@ exports.getprofile = (request, response) => {
 }
 
 exports.addcontent = (request, response) => {
-  Tweets.addTweet(request.body, (error, result) => {
+  Tweets.addTweet(request.body,(error, result) => {
     if (error) {
       response.send(error.message);
     }
