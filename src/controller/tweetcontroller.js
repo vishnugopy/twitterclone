@@ -25,3 +25,13 @@ exports.getprofile = (request, response) => {
     response.render("profile.ejs", { tweets });
   });
 }
+
+exports.addcontent = (request, response) => {
+  Tweets.addTweet(request.body, (error, result) => {
+    if (error) {
+      response.send(error.message);
+    }
+
+    response.redirect("/");
+  })
+}

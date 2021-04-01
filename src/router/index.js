@@ -12,6 +12,7 @@ router.get("/signup" , usercontroller.signup );
 router.get("/login" , usercontroller.login );
 router.post("/login" , usercontroller.authenticate );
 router.get("/username" , tweetcontroler.getprofile );
+router.post("/tweet" , tweetcontroler.addcontent );
 
 
 
