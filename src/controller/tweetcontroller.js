@@ -15,14 +15,15 @@ exports.findAll = (request, response) => {
 
 
 exports.getprofile = (request, response) => {
-  Tweets.profiledetails((error, tweets) => {
+  const {iduser} = request.params;
+  Tweets.profiledetails(iduser,(error, tweets) => {
     if (error) {
       response.send(error.message);
     }
 
     console.log("profile ", tweets);
 
-    response.render("profile.ejs", { tweets });
+    response.render("profile.ejs", { tweets  });
   });
 }
 

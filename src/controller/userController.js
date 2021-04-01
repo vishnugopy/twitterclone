@@ -82,6 +82,7 @@ exports.authenticate = (request, response) => {
       const user = {
         name: result[0].name,
         username: result[0].username,
+        id : result[0].id,
         exp: MAXAGE
       };
 
@@ -90,10 +91,8 @@ exports.authenticate = (request, response) => {
           response.send(error.message);
         }
 
-        request.user = {
-          name: result[0].name,
-          username: result[0].username,
-        };
+        request.user = user;
+        
         response.cookie('authcookie', token, { maxAge: MAXAGE });
         response.redirect('/');
       });

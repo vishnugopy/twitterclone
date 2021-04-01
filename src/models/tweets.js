@@ -15,8 +15,8 @@ exports.getAll = (callback) => {
 }
 
 
-exports.profiledetails = (callback) => {
-  db.query("SELECT * FROM tweets INNER JOIN users ON tweets.userid = users.id;", (error, result) => {
+exports.profiledetails = (iduser,callback) => {
+  db.query(`SELECT * FROM tweets INNER JOIN users ON tweets.userid = users.id where tweets.userid = "${iduser}";`, (error, result) => {
     if (error) {
       console.log("error: ", error);
       callback(error, null);
@@ -29,7 +29,7 @@ exports.profiledetails = (callback) => {
 
 exports.addTweet = (content, callback) => {
   db.query(`INSERT INTO tweets (content , createsAt ,  userid ) 
-  VALUES ("${content.content}","2020/10/02", "12" );`, (error, result) => {
+  VALUES ("${content.content}","2020/10/02", "13" );`, (error, result) => {
     if (error) {
       console.log("error: ", error);
       callback(error, null);
