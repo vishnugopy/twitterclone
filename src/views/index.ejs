@@ -48,7 +48,8 @@
           <label for="content"></label>
           <div class="tweet-container-text">
             <textarea name="content" id="message" placeholder="Whats's happening ?"></textarea>
-            <input type="text" id="userid" name="userid" value="<%=  %>">
+            <input class="hide" type="text" id="userid" name="userid" value="<%= user.id %>">
+            <input class="hide" id="datePicker" type="date" value="" name="createsAt">
           </div>
 
         </div>
@@ -87,6 +88,9 @@
     <div class="tweet-search"></div>
 
   </section>
+  <script>
+    document.getElementById('datePicker').valueAsDate = new Date();
+  </script>
 </body>
 
 </html>

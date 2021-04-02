@@ -3,7 +3,7 @@ const Tweets = require("../models/tweets");
 
 
 exports.findAll = (request, response) => {
-
+  const { user } = request;
   Tweets.getAll((error, tweets) => {
     if (error) {
       response.send(error.message);
@@ -11,7 +11,7 @@ exports.findAll = (request, response) => {
 
     console.log("tweetsssssssssssssssss ", tweets );
 
-    response.render("index.ejs", { tweets  });
+    response.render("index.ejs", { tweets , user  });
   });
 }
 

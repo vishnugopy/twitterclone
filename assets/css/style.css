@@ -1,6 +1,7 @@
 body {
   width: 90%;
-  margin: 0 auto;
+  margin: 0.5% auto;
+  overflow: hidden;
 }
 
 .section-accueil {
@@ -65,11 +66,16 @@ body {
 }
 
 .tweet-container {
-  width: 50vw;
+  width: 50%;
+  padding: 1%;
   height: 100%;
   overflow-y: scroll;
   border-right: 1px solid gray;
   border-left: 1px solid gray;
+}
+
+.tweet-container::-webkit-scrollbar {
+  display: none;
 }
 
 .tweet-container-title {
@@ -176,6 +182,7 @@ body {
 }
 
 .comments-comment {
+  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,6 +241,10 @@ body {
 .tweet-search {
   width: 25vw;
   height: 100%;
+}
+
+.hide {
+  display: none;
 }
 
 .home {

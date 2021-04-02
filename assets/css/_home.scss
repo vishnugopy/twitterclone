@@ -1,6 +1,7 @@
 body{
     width: 90%;
-    margin: 0 auto;
+    margin: 0.5% auto;
+    overflow: hidden;
 }
 
 .section-accueil {
@@ -21,6 +22,8 @@ body{
       width: 3vw;
       margin: 5vh 0;
   }
+
+ 
   &-link {
       display: flex;
       flex-direction: column;
@@ -44,11 +47,17 @@ body{
 }
 
 .tweet-container {
-  width: 50vw;
+  width: 50%;
+  padding: 1%;
   height: 100%;
   overflow-y: scroll;
   border-right: 1px solid gray;
   border-left: 1px solid gray;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   &-title {
       display: flex;
       align-items: center;
@@ -130,6 +139,7 @@ body{
 
 .comments {
   &-comment {
+      width: auto;
       display: flex;
       padding: 3%;
       border-bottom: 1px solid grey;
@@ -173,4 +183,8 @@ body{
 .tweet-search {
   width: 25vw;
   height: 100%;
+}
+
+.hide{
+    display: none;
 }
