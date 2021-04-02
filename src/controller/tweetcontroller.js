@@ -17,6 +17,7 @@ exports.findAll = (request, response) => {
 
 
 exports.getprofile = (request, response) => {
+  const { user } = request;
   const {iduser} = request.params;
   Tweets.profiledetails(iduser,(error, tweets) => {
     if (error) {
@@ -25,9 +26,24 @@ exports.getprofile = (request, response) => {
 
     console.log("profile ", tweets);
 
-    response.render("profile.ejs", { tweets  });
+    response.render("profile.ejs", { tweets, user  });
   });
 }
+
+exports.profile = (request, response) => {
+  const { user } = request;
+  const {id} = request.params;
+  Tweets.profiledetails(id,(error, tweets) => {
+    if (error) {
+      response.send(error.message);
+    }
+
+    console.log("profile ", tweets);
+
+    response.render("profile.ejs", { tweets, user   });
+  });
+}
+
 
 exports.addcontent = (request, response) => {
   Tweets.addTweet(request.body,(error, result) => {

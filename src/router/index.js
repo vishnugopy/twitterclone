@@ -13,6 +13,8 @@ router.get("/signup" , usercontroller.signup );
 router.get("/login" , usercontroller.login );
 router.post("/login" , usercontroller.authenticate );
 router.get("/username/:iduser" , tweetcontroler.getprofile );
+
+router.get("/profile/:id" , tweetcontroler.profile );
 router.post("/tweet", isAuth , tweetcontroler.addcontent );
 
 
