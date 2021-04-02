@@ -218,11 +218,14 @@ body {
 }
 
 .comments-comment-content-username {
+  color: #1DA1F2;
   font-weight: bold;
   margin-bottom: 3%;
+  text-transform: capitalize;
 }
 
 .comments-comment-content-date {
+  color: #b8b8b8;
   margin-left: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
