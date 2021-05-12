@@ -1,4 +1,4 @@
-﻿# twitterclone with Sql
+﻿# Twitterclone with Sql and Express.js
  
 This is a simplified twiter clone where we try to reproduce the main functionalities:
  
