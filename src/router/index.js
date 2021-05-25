@@ -7,7 +7,7 @@ const isAuth = require("../middlewares/isAuth")
 const router = express.Router();
 
 // Display all tweets after being auth
-router.get("/" ,isAuth , tweetcontroler.findAll );
+router.get("/" , tweetcontroler.findAll );
 // To disconnect
 router.get("/logout" , usercontroller.logout );
 // To create an account via post
@@ -23,7 +23,7 @@ router.get("/username/:iduser" , tweetcontroler.getprofile );
 // ?????????
 router.get("/profile/:id" , tweetcontroler.profile );
 // To post a tweet
-router.post("/tweet", isAuth , tweetcontroler.addcontent );
+router.post("/tweet" , tweetcontroler.addcontent );
 
 
 
